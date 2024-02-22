@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.feb.test.dao.MemberDao">
+
+	<!-- public Member login(String memberId); -->
+	<!-- insert 너무도 당연히 숫자, 그러니 생략  -->
+	<insert id="join" parameterType="java.util.HashMap">
+		INSERT INTO lecture.member (member_id, member_name, passwd, email, join_dtm) 
+		VALUES(
+		#{memberId},
+		#{memberName},
+		#{passwd},
+		#{email},
+		to_char(now(), 'YYYYMMDDHH24MISS')
+		)
+	</insert>
+
+</mapper>
+
