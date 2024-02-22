@@ -36,6 +36,7 @@ public class LoginController {
 		System.out.println("params: 			 " + params);
 
 		int result = memberService.join(params);
+//		DB에 정보가 저장되면 1이 반환된다.
 		if (result == 1) {
 			mv.addObject("resultMsg", "회원가입 성공 ");
 		} else {
